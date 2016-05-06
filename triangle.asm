@@ -35,7 +35,7 @@ main:
 		
 		loop2:
 		beq $t1, $t0, loop
-			
+		
 			li $v0, 4
 			la $a0, star
 			syscall
