@@ -3,8 +3,7 @@
 	
 .text
 .globl main
-main:
-	
+main:	
 	li $v0, 7
 	syscall
 	
