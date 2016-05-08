@@ -18,7 +18,7 @@ main:
 	la $a0, str_input1
 	syscall
 	
-	li $v0, 6
+	li $v0, 7
 	syscall
 	mov.d $f4, $f0
 	
@@ -26,7 +26,7 @@ main:
 	la $a0, str_input2
 	syscall
 	
-	li $v0, 6
+	li $v0, 7
 	syscall
 	mov.d $f6, $f0
 	
@@ -39,15 +39,31 @@ main:
 	move $t0, $v0
 	
 	beq $t0, 1, ADD
+	beq $t0, 2, SUB
+	beq $t0, 3, MUL
+	beq $t0, 4, DIV
 	
 	ADD:
-		add.d $f8, $f4, $f6
+		add.d $f4, $f4, $f6
 		j END
+	
+	SUB:
+		sub.d $f4, $f4, $f6
+		j END
+
+	MUL:
+		mul.d $f4, $f4, $f6
+		j END
+
+	DIV:
+		div.d $f4, $f4, $f6
+		j END
+
 	
 	
 END:
 li $v0, 3
-mov.d $f12, $f8
+mov.d $f12, $f4
 syscall
 		
 li $v0, 10
