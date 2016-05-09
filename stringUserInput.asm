@@ -6,7 +6,7 @@
 .globl main
 main:
 	la $a0, userName
-	la $a2, userName
+	#la $a2, userName
 	li $a1, 6
 	
 	li $v0, 8
